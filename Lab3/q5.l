@@ -4,13 +4,13 @@
 
 
 %%
-[ ]*and[a-zA-z] ;
+[ ]*and[a-zA-Z] ;
 
 [ ]*and {
 	y++;
 }
 
-[a-zA-z]and[ ]* ;
+[a-zA-Z]and[ ]* ;
 
 and[ ] {
 	y++;
