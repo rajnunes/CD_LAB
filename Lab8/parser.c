@@ -1,0 +1,1 @@
+//getNextToken(): should dynamically add each token to the hash table and return one token at a time 
