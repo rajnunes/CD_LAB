@@ -83,8 +83,10 @@ int searchToken(LexemeNode *node){
 }
 
 int insertToken(LexemeNode* node){
-	if(node==NULL)
+	if(node==NULL){
+		printf("TMPTEMPTEMP\n");
 		return 0;
+	}
 	if(searchToken(node))
 		return 1;
 	LexemeNode *tempNode;
@@ -206,7 +208,7 @@ int getNextToken(FILE *fp1){
 			}
 			if(c=='(')
 				func=1;
-			if(c=='[')
+			else if(c=='[')
 			{
 				// fprintf(fp2, "<%c> ", c);
 				int s=0;
@@ -312,6 +314,7 @@ int getNextToken(FILE *fp1){
 				// fprintf(fp2, "<%s,%d>",buf, pos+1);
 			}
 			else{
+				printf("%s\n",buf);
 				strcpy(tempNode->lexemeName,buf);
 				// strcpy(usednum[usednumcur++], buf);
 				// fprintf(fp2, "<%s,%d> ",buf, usednumcur);
@@ -323,6 +326,7 @@ int getNextToken(FILE *fp1){
 			// fprintf(fp2, "<%c> ", c);
 			c=fgetc(fp1);
 		}
+		printf("YOLO'Z %s\n", );
 		if(insertToken(tempNode))
 			 printf("success fuly inserted\n");
 		else
@@ -407,8 +411,9 @@ int main(){
 
 	FILE *fp1;
 	char file[100];
-	printf("\nEnter Input File : ");
-	scanf("%s",file);
+	// printf("\nEnter Input File : ");
+	// scanf("%s",file);
+	strcpy(file,"eval.txt");
 	fp1 = fopen(file, "r");
 	getNextToken(fp1);
 	// char *temp=getNextToken(fp1);
